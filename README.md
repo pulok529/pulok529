@@ -47,10 +47,6 @@ Here are my 6 pinned repositories that showcase both enterprise software and Dev
    *Tech: SSIS, SQL Server, PL/SQL, ETL automation*  
    *DevOps: CI pipelines for data validation, IaC with Terraform for AWS storage & RDS.*
 
-6. **[Hotel_Management](https://github.com/pulok529/Hotel_Management)**  
-   Hotel & inventory management system with booking & reporting.  
-   *Tech: ASP.NET MVC/Core, MSSQL*  
-   *DevOps: Dockerized deployment, GitHub Actions workflow for CI, Kubernetes YAMLs for scaling.*
 
 ---
 

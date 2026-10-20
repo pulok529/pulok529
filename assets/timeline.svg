@@ -1,0 +1,249 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" width="1000" height="360" fill="none">
+  <defs>
+    <linearGradient id="timelineGrad" x1="60" y1="180" x2="940" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    @keyframes drawLine {
+      from {
+        stroke-dashoffset: 880;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes pulseGlow {
+      0% {
+        r: 9px;
+        stroke-width: 2.5px;
+        stroke-opacity: 0.85;
+      }
+      50% {
+        stroke-opacity: 0.4;
+      }
+      100% {
+        r: 22px;
+        stroke-width: 1px;
+        stroke-opacity: 0;
+      }
+    }
+
+    @keyframes nodeAppear {
+      from {
+        opacity: 0;
+        transform: scale(0.3);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeInCardAbove {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInCardBelow {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .timeline-track {
+      stroke: #1E293B;
+      stroke-width: 3;
+      stroke-linecap: round;
+    }
+
+    .timeline-bar {
+      stroke: url(#timelineGrad);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-dasharray: 880;
+      stroke-dashoffset: 880;
+      animation: drawLine 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .node-group {
+      opacity: 0;
+      animation: nodeAppear 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+    .node-group-1 {
+      animation-delay: 0.35s;
+      transform-origin: 170px 180px;
+    }
+    .node-group-2 {
+      animation-delay: 0.75s;
+      transform-origin: 500px 180px;
+    }
+    .node-group-3 {
+      animation-delay: 1.15s;
+      transform-origin: 830px 180px;
+    }
+
+    .pulse-ring {
+      fill: none;
+      stroke: #22D3EE;
+      animation: pulseGlow 2.5s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+    }
+    .pulse-1 { animation-delay: 0.35s; }
+    .pulse-2 { animation-delay: 0.75s; }
+    .pulse-3 { animation-delay: 1.15s; }
+
+    .node-core {
+      fill: #22D3EE;
+    }
+
+    .card-group {
+      opacity: 0;
+      animation-duration: 0.6s;
+      animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+      animation-fill-mode: forwards;
+    }
+    .card-group-1 {
+      animation-name: fadeInCardAbove;
+      animation-delay: 1.5s;
+    }
+    .card-group-2 {
+      animation-name: fadeInCardBelow;
+      animation-delay: 2.0s;
+    }
+    .card-group-3 {
+      animation-name: fadeInCardAbove;
+      animation-delay: 2.5s;
+    }
+
+    .connector-line {
+      stroke: #22D3EE;
+      stroke-opacity: 0.4;
+      stroke-width: 1.5;
+    }
+
+    .card-bg {
+      fill: #111833;
+      stroke: #22D3EE;
+      stroke-opacity: 0.4;
+      stroke-width: 1.5;
+    }
+
+    .text-title {
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      fill: #E2E8F0;
+    }
+
+    .text-date {
+      font-family: 'JetBrains Mono', Consolas, monospace;
+      font-size: 13px;
+      font-weight: 600;
+      fill: #22D3EE;
+    }
+
+    .text-company {
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      fill: #E2E8F0;
+    }
+
+    .text-detail {
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      font-size: 12.5px;
+      font-weight: 400;
+      fill: #94A3B8;
+      letter-spacing: -0.15px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .timeline-bar {
+        stroke-dashoffset: 0 !important;
+        animation: none !important;
+      }
+      .node-group, .card-group {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+      }
+      .pulse-ring {
+        animation: none !important;
+        stroke-opacity: 0.4 !important;
+        r: 13px !important;
+      }
+    }
+  </style>
+
+  <!-- Outer Background -->
+  <rect width="1000" height="360" rx="16" fill="#0B1020" stroke="#1E293B" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="40" y="48" class="text-title">Career</text>
+
+  <!-- Horizontal Timeline Bar -->
+  <line x1="60" y1="180" x2="940" y2="180" class="timeline-track"/>
+  <line x1="60" y1="180" x2="940" y2="180" class="timeline-bar"/>
+
+  <!-- Milestone Nodes -->
+  <!-- Node 1 (x=170, y=180) -->
+  <g class="node-group node-group-1">
+    <circle cx="170" cy="180" r="9" class="pulse-ring pulse-1"/>
+    <circle cx="170" cy="180" r="9" class="node-core"/>
+  </g>
+
+  <!-- Node 2 (x=500, y=180) -->
+  <g class="node-group node-group-2">
+    <circle cx="500" cy="180" r="9" class="pulse-ring pulse-2"/>
+    <circle cx="500" cy="180" r="9" class="node-core"/>
+  </g>
+
+  <!-- Node 3 (x=830, y=180) -->
+  <g class="node-group node-group-3">
+    <circle cx="830" cy="180" r="9" class="pulse-ring pulse-3"/>
+    <circle cx="830" cy="180" r="9" class="node-core"/>
+  </g>
+
+  <!-- Milestone 1 Card (Above) -->
+  <g class="card-group card-group-1">
+    <line x1="170" y1="168" x2="170" y2="180" class="connector-line"/>
+    <rect x="30" y="64" width="280" height="104" rx="12" class="card-bg"/>
+    <text x="46" y="87" class="text-date">2019 – 2022</text>
+    <text x="46" y="109" class="text-company">Creatrix Soft Tech</text>
+    <text x="46" y="134" class="text-detail">Web Developer → Senior Software Developer</text>
+  </g>
+
+  <!-- Milestone 2 Card (Below) -->
+  <g class="card-group card-group-2">
+    <line x1="500" y1="180" x2="500" y2="212" class="connector-line"/>
+    <rect x="360" y="212" width="280" height="104" rx="12" class="card-bg"/>
+    <text x="376" y="235" class="text-date">2022 – 2025</text>
+    <text x="376" y="257" class="text-company">LEADS Corporation</text>
+    <text x="376" y="278" class="text-detail">Senior Software Engineer &amp; Scrum Master</text>
+    <text x="376" y="298" class="text-detail">Core banking platforms</text>
+  </g>
+
+  <!-- Milestone 3 Card (Above) -->
+  <g class="card-group card-group-3">
+    <line x1="830" y1="168" x2="830" y2="180" class="connector-line"/>
+    <rect x="690" y="64" width="280" height="104" rx="12" class="card-bg"/>
+    <text x="706" y="87" class="text-date">2025</text>
+    <text x="706" y="109" class="text-company">Proshika</text>
+    <text x="706" y="130" class="text-detail">IT Consultant</text>
+    <text x="706" y="150" class="text-detail">AWS · Docker · Kubernetes · Terraform · SSIS</text>
+  </g>
+</svg>

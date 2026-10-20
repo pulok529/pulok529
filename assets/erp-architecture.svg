@@ -1,0 +1,238 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440">
+  <defs>
+    <!-- Background subtle gradient -->
+    <radialGradient id="bg-glow" cx="45%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#1E1B4B" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0B1020" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Arrow markers -->
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 1 2 L 7 5 L 1 8 z" fill="#22D3EE"/>
+    </marker>
+
+    <marker id="arrow-violet" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 1 2 L 7 5 L 1 8 z" fill="#8B5CF6"/>
+    </marker>
+
+    <marker id="arrow-violet-down" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M 1 2 L 7 5 L 1 8 z" fill="#8B5CF6"/>
+    </marker>
+  </defs>
+
+  <style>
+    @keyframes flowCyan {
+      from { stroke-dashoffset: 20; }
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes flowViolet {
+      from { stroke-dashoffset: 18; }
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes flowModuleDown {
+      from { stroke-dashoffset: 14; }
+      to { stroke-dashoffset: 0; }
+    }
+
+    .font-sans {
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    }
+
+    .font-mono {
+      font-family: "JetBrains Mono", Consolas, monospace;
+    }
+
+    .flow-arrow-cyan {
+      stroke: #22D3EE;
+      stroke-width: 2;
+      stroke-dasharray: 6 4;
+      animation: flowCyan 1s linear infinite;
+    }
+
+    .flow-arrow-violet {
+      stroke: #8B5CF6;
+      stroke-width: 1.5;
+      stroke-dasharray: 5 4;
+      animation: flowViolet 1.2s linear infinite;
+    }
+
+    .module-wire {
+      stroke: #8B5CF6;
+      stroke-width: 1.2;
+      stroke-dasharray: 4 3;
+      stroke-opacity: 0.5;
+      fill: none;
+      animation: flowModuleDown 1.4s linear infinite;
+    }
+
+    .tier-box {
+      fill: #111833;
+      stroke: #22D3EE;
+      stroke-width: 1.5;
+      rx: 12px;
+    }
+
+    .module-pill {
+      fill: #111833;
+      stroke: #8B5CF6;
+      stroke-width: 1.2;
+      rx: 14px;
+    }
+
+    .devops-chip {
+      fill: #111833;
+      stroke: #8B5CF6;
+      stroke-width: 1.2;
+      rx: 8px;
+    }
+  </style>
+
+  <!-- Outer Canvas Container -->
+  <rect width="1000" height="440" rx="16" fill="#0B1020" stroke="#1E293B" stroke-width="1.5"/>
+  <rect width="1000" height="440" rx="16" fill="url(#bg-glow)"/>
+
+  <!-- Title -->
+  <text x="40" y="44" fill="#E2E8F0" class="font-sans" font-size="20" font-weight="700" letter-spacing="-0.2">How my ERP systems are built</text>
+
+  <!-- Thin Connection Lines from Module Chips to BLL Box (BLL top is at y=170) -->
+  <g>
+    <!-- From Production (center 143, bottom 108) to BLL top (310, 170) -->
+    <path d="M 143 108 C 143 148, 310 132, 310 170" class="module-wire">
+      <animate attributeName="stroke-dashoffset" from="14" to="0" dur="1.4s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- From Merchandising (center 298, bottom 108) to BLL top (345, 170) -->
+    <path d="M 298 108 C 298 144, 345 134, 345 170" class="module-wire">
+      <animate attributeName="stroke-dashoffset" from="14" to="0" dur="1.4s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- From Commercial (LC · Shipment) (center 509, bottom 108) to BLL top (380, 170) -->
+    <path d="M 509 108 C 509 144, 380 134, 380 170" class="module-wire">
+      <animate attributeName="stroke-dashoffset" from="14" to="0" dur="1.4s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- From Inventory (center 707, bottom 108) to BLL top (415, 170) -->
+    <path d="M 707 108 C 707 148, 415 132, 415 170" class="module-wire">
+      <animate attributeName="stroke-dashoffset" from="14" to="0" dur="1.4s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- From Accounting (center 853, bottom 108) to BLL top (450, 170) -->
+    <path d="M 853 108 C 853 154, 450 126, 450 170" class="module-wire">
+      <animate attributeName="stroke-dashoffset" from="14" to="0" dur="1.4s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Connection node dots on BLL top edge -->
+    <circle cx="310" cy="170" r="2.5" fill="#8B5CF6"/>
+    <circle cx="345" cy="170" r="2.5" fill="#8B5CF6"/>
+    <circle cx="380" cy="170" r="2.5" fill="#8B5CF6"/>
+    <circle cx="415" cy="170" r="2.5" fill="#8B5CF6"/>
+    <circle cx="450" cy="170" r="2.5" fill="#8B5CF6"/>
+  </g>
+
+  <!-- Row of 5 Module Chips at y=80 -->
+  <g>
+    <!-- Chip 1: Production -->
+    <rect x="87" y="80" width="112" height="28" class="module-pill"/>
+    <text x="143" y="98.5" fill="#E2E8F0" class="font-sans" font-size="13" font-weight="500" text-anchor="middle">Production</text>
+
+    <!-- Chip 2: Merchandising -->
+    <rect x="231" y="80" width="134" height="28" class="module-pill"/>
+    <text x="298" y="98.5" fill="#E2E8F0" class="font-sans" font-size="13" font-weight="500" text-anchor="middle">Merchandising</text>
+
+    <!-- Chip 3: Commercial (LC · Shipment) -->
+    <rect x="397" y="80" width="224" height="28" class="module-pill"/>
+    <text x="509" y="98.5" fill="#E2E8F0" class="font-sans" font-size="13" font-weight="500" text-anchor="middle">Commercial (LC · Shipment)</text>
+
+    <!-- Chip 4: Inventory -->
+    <rect x="653" y="80" width="108" height="28" class="module-pill"/>
+    <text x="707" y="98.5" fill="#E2E8F0" class="font-sans" font-size="13" font-weight="500" text-anchor="middle">Inventory</text>
+
+    <!-- Chip 5: Accounting -->
+    <rect x="793" y="80" width="120" height="28" class="module-pill"/>
+    <text x="853" y="98.5" fill="#E2E8F0" class="font-sans" font-size="13" font-weight="500" text-anchor="middle">Accounting</text>
+  </g>
+
+  <!-- Main Row Boxes at y=170 (Width 190, Height 70, rx 12, fill #111833, cyan stroke) -->
+  <g>
+    <!-- Box 1: Web UI -->
+    <rect x="40" y="170" width="190" height="70" class="tier-box"/>
+    <text x="135" y="198" fill="#E2E8F0" class="font-sans" font-size="15" font-weight="700" text-anchor="middle">Web UI</text>
+    <text x="135" y="221" fill="#94A3B8" class="font-mono" font-size="11" text-anchor="middle">ASP.NET Web Forms · MVC</text>
+
+    <!-- Arrow 1 -> 2: Web UI to BLL -->
+    <line x1="230" y1="205" x2="280" y2="205" class="flow-arrow-cyan" marker-end="url(#arrow-cyan)">
+      <animate attributeName="stroke-dashoffset" from="20" to="0" dur="1s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- Box 2: BLL -->
+    <rect x="285" y="170" width="190" height="70" class="tier-box"/>
+    <text x="380" y="198" fill="#E2E8F0" class="font-sans" font-size="15" font-weight="700" text-anchor="middle">BLL</text>
+    <text x="380" y="221" fill="#94A3B8" class="font-sans" font-size="12" text-anchor="middle">business rules</text>
+
+    <!-- Arrow 2 -> 3: BLL to DAL · DAO -->
+    <line x1="475" y1="205" x2="525" y2="205" class="flow-arrow-cyan" marker-end="url(#arrow-cyan)">
+      <animate attributeName="stroke-dashoffset" from="20" to="0" dur="1s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- Box 3: DAL · DAO -->
+    <rect x="530" y="170" width="190" height="70" class="tier-box"/>
+    <text x="625" y="198" fill="#E2E8F0" class="font-sans" font-size="15" font-weight="700" text-anchor="middle">DAL · DAO</text>
+    <text x="625" y="221" fill="#94A3B8" class="font-mono" font-size="12" text-anchor="middle">ADO.NET</text>
+
+    <!-- Arrow 3 -> 4: DAL · DAO to SQL Server -->
+    <line x1="720" y1="205" x2="770" y2="205" class="flow-arrow-cyan" marker-end="url(#arrow-cyan)">
+      <animate attributeName="stroke-dashoffset" from="20" to="0" dur="1s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- Box 4: SQL Server -->
+    <rect x="775" y="170" width="190" height="70" class="tier-box"/>
+    <text x="870" y="198" fill="#E2E8F0" class="font-sans" font-size="15" font-weight="700" text-anchor="middle">SQL Server</text>
+    <text x="870" y="221" fill="#94A3B8" class="font-sans" font-size="12" text-anchor="middle">stored procedures</text>
+  </g>
+
+  <!-- Arrow down from SQL Server to Crystal Reports -->
+  <line x1="870" y1="240" x2="870" y2="265" class="flow-arrow-cyan" marker-end="url(#arrow-cyan)">
+    <animate attributeName="stroke-dashoffset" from="20" to="0" dur="1s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- Crystal Reports Box below SQL Server at y=270 -->
+  <g>
+    <rect x="775" y="270" width="190" height="54" class="tier-box"/>
+    <text x="870" y="291" fill="#E2E8F0" class="font-sans" font-size="14" font-weight="700" text-anchor="middle">Crystal Reports</text>
+    <text x="870" y="310" fill="#94A3B8" class="font-sans" font-size="11.5" text-anchor="middle">MIS &amp; statutory reports</text>
+  </g>
+
+  <!-- Bottom Lane at y=350: DevOps -->
+  <g>
+    <!-- Dashed-border rounded container -->
+    <rect x="40" y="350" width="920" height="66" rx="12" fill="#111833" fill-opacity="0.6" stroke="#8B5CF6" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+    <!-- "DevOps" label tab/badge -->
+    <rect x="62" y="342" width="68" height="17" rx="4" fill="#0B1020" stroke="#8B5CF6" stroke-width="1.2"/>
+    <text x="96" y="354.5" fill="#C4B5FD" class="font-sans" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="0.5">DevOps</text>
+
+    <!-- Chip 1: Docker -->
+    <rect x="125" y="366" width="96" height="34" class="devops-chip"/>
+    <text x="173" y="388" fill="#E2E8F0" class="font-sans" font-size="13" font-weight="600" text-anchor="middle">Docker</text>
+
+    <!-- Arrow from Docker to GitHub Actions · Jenkins -->
+    <line x1="221" y1="383" x2="255" y2="383" class="flow-arrow-violet" marker-end="url(#arrow-violet)">
+      <animate attributeName="stroke-dashoffset" from="18" to="0" dur="1.2s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- Chip 2: GitHub Actions · Jenkins -->
+    <rect x="260" y="366" width="220" height="34" class="devops-chip"/>
+    <text x="370" y="388" fill="#E2E8F0" class="font-sans" font-size="12.5" font-weight="500" text-anchor="middle">GitHub Actions · Jenkins</text>
+
+    <!-- Arrow from GitHub Actions · Jenkins to Terraform · AWS -->
+    <line x1="480" y1="383" x2="514" y2="383" class="flow-arrow-violet" marker-end="url(#arrow-violet)">
+      <animate attributeName="stroke-dashoffset" from="18" to="0" dur="1.2s" repeatCount="indefinite"/>
+    </line>
+
+    <!-- Chip 3: Terraform · AWS (VPC · ECR · RDS · EKS) -->
+    <rect x="519" y="366" width="355" height="34" class="devops-chip"/>
+    <text x="696.5" y="388" fill="#E2E8F0" class="font-sans" font-size="12" font-weight="500" text-anchor="middle">Terraform · AWS (VPC · ECR · RDS · EKS)</text>
+  </g>
+</svg>

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" width="900" height="260">
+  <defs>
+    <clipPath id="window-clip">
+      <rect width="900" height="260" rx="16" />
+    </clipPath>
+    <clipPath id="clip1">
+      <rect x="28" y="56" width="0" height="28">
+        <animate attributeName="width" from="0" to="844" dur="0.8s" begin="0.2s" fill="freeze" />
+      </rect>
+    </clipPath>
+    <clipPath id="clip2">
+      <rect x="28" y="86" width="0" height="28">
+        <animate attributeName="width" from="0" to="844" dur="0.8s" begin="1.2s" fill="freeze" />
+      </rect>
+    </clipPath>
+    <clipPath id="clip3">
+      <rect x="28" y="116" width="0" height="28">
+        <animate attributeName="width" from="0" to="844" dur="0.8s" begin="2.2s" fill="freeze" />
+      </rect>
+    </clipPath>
+    <clipPath id="clip4">
+      <rect x="28" y="146" width="0" height="28">
+        <animate attributeName="width" from="0" to="844" dur="0.8s" begin="3.2s" fill="freeze" />
+      </rect>
+    </clipPath>
+    <clipPath id="clip5">
+      <rect x="28" y="176" width="0" height="28">
+        <animate attributeName="width" from="0" to="844" dur="0.8s" begin="4.2s" fill="freeze" />
+      </rect>
+    </clipPath>
+    <clipPath id="clip6">
+      <rect x="28" y="206" width="0" height="28">
+        <animate attributeName="width" from="0" to="844" dur="0.8s" begin="5.2s" fill="freeze" />
+      </rect>
+    </clipPath>
+  </defs>
+
+  <style>
+    @keyframes blink {
+      0%, 49.9% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    .window-title {
+      font-family: "JetBrains Mono", Consolas, monospace;
+      font-size: 13px;
+      fill: #94A3B8;
+      text-anchor: middle;
+    }
+    .code {
+      font-family: "JetBrains Mono", Consolas, monospace;
+      font-size: 15px;
+    }
+    .cursor {
+      opacity: 0;
+      animation: blink 1s step-end infinite;
+      animation-delay: 6s;
+    }
+  </style>
+
+  <g clip-path="url(#window-clip)">
+    <!-- Terminal Background -->
+    <rect width="900" height="260" rx="16" fill="#0B1020" />
+
+    <!-- Title Bar -->
+    <rect width="900" height="34" fill="#111833" />
+    <line x1="0" y1="34" x2="900" y2="34" stroke="#1E293B" stroke-width="1" />
+
+    <!-- Three Dots -->
+    <circle cx="20" cy="17" r="6" fill="#FF5F56" />
+    <circle cx="38" cy="17" r="6" fill="#FFBD2E" />
+    <circle cx="56" cy="17" r="6" fill="#27C93F" />
+
+    <!-- Centered Title -->
+    <text x="450" y="22" class="window-title">naimul@dhaka: ~</text>
+
+    <!-- Terminal Lines -->
+    <text x="28" y="76" class="code" clip-path="url(#clip1)" xml:space="preserve"><tspan fill="#22D3EE">$</tspan><tspan fill="#E2E8F0"> dotnet run --profile naimul</tspan></text>
+    <text x="28" y="106" class="code" clip-path="url(#clip2)" xml:space="preserve"><tspan fill="#22D3EE">&gt; </tspan><tspan fill="#8B5CF6">role:</tspan><tspan fill="#E2E8F0">     Senior Software Engineer</tspan></text>
+    <text x="28" y="136" class="code" clip-path="url(#clip3)" xml:space="preserve"><tspan fill="#22D3EE">&gt; </tspan><tspan fill="#8B5CF6">focus:</tspan><tspan fill="#E2E8F0">    .NET · distributed systems · cloud · NLP</tspan></text>
+    <text x="28" y="166" class="code" clip-path="url(#clip4)" xml:space="preserve"><tspan fill="#22D3EE">&gt; </tspan><tspan fill="#8B5CF6">building:</tspan><tspan fill="#E2E8F0"> ArcMorph — local-AI code modernisation</tspan></text>
+    <text x="28" y="196" class="code" clip-path="url(#clip5)" xml:space="preserve"><tspan fill="#22D3EE">&gt; </tspan><tspan fill="#8B5CF6">shipped:</tspan><tspan fill="#E2E8F0">  banking, ERP, HRM &amp; data-migration systems</tspan></text>
+    <text x="28" y="226" class="code" clip-path="url(#clip6)" xml:space="preserve"><tspan fill="#22D3EE">&gt; </tspan><tspan fill="#8B5CF6">status:</tspan><tspan fill="#E2E8F0">   open to impactful engineering roles</tspan><tspan fill="#22D3EE" class="cursor" opacity="0">&#x2588;<animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.499;0.5;0.999;1" dur="1s" begin="6s" repeatCount="indefinite" /></tspan></text>
+
+    <!-- Outer Border -->
+    <rect x="0.5" y="0.5" width="899" height="259" rx="16" fill="none" stroke="#1E293B" stroke-width="1" />
+  </g>
+</svg>

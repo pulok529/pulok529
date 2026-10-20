@@ -1,0 +1,348 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300">
+  <defs>
+    <!-- Background clipping mask with rounded corners -->
+    <clipPath id="card-clip">
+      <rect width="1200" height="300" rx="16" />
+    </clipPath>
+
+    <!-- Cyan radial glow (12% opacity) on the right -->
+    <radialGradient id="radial-glow-cyan" cx="80%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.12" />
+      <stop offset="60%" stop-color="#22D3EE" stop-opacity="0.04" />
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Subtle complementary violet radial glow -->
+    <radialGradient id="radial-glow-violet" cx="92%" cy="40%" r="45%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.10" />
+      <stop offset="70%" stop-color="#8B5CF6" stop-opacity="0.02" />
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Border stroke gradient -->
+    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22D3EE" stop-opacity="0.35" />
+      <stop offset="50%" stop-color="#8B5CF6" stop-opacity="0.20" />
+      <stop offset="100%" stop-color="#111833" stop-opacity="0.50" />
+    </linearGradient>
+
+    <!-- Text underline cyan-to-violet gradient -->
+    <linearGradient id="cyan-violet-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22D3EE" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+
+    <!-- Soft glow filter for travelling packets -->
+    <filter id="packet-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .text-fade-group {
+        animation: fadeIn 1.2s ease-out forwards;
+      }
+
+      .name-text {
+        font-family: "Inter", "Segoe UI", Arial, sans-serif;
+        font-size: 52px;
+        font-weight: 700;
+        fill: #E2E8F0;
+        letter-spacing: -0.5px;
+      }
+
+      .sub-text {
+        font-family: "JetBrains Mono", Consolas, monospace;
+        font-size: 17px;
+        font-weight: 500;
+        fill: #22D3EE;
+        letter-spacing: -0.2px;
+      }
+    </style>
+  </defs>
+
+  <!-- Clipped card content -->
+  <g clip-path="url(#card-clip)">
+    <!-- Base card background -->
+    <rect width="1200" height="300" rx="16" fill="#0B1020" />
+
+    <!-- Subtle radial glow layers on the right -->
+    <rect width="1200" height="300" rx="16" fill="url(#radial-glow-cyan)" />
+    <rect width="1200" height="300" rx="16" fill="url(#radial-glow-violet)" />
+
+    <!-- Network connections (~60% right canvas) -->
+    <g stroke-opacity="0.35" stroke-width="1">
+      <line x1="520" y1="80" x2="580" y2="130" stroke="#22D3EE" />
+      <line x1="520" y1="80" x2="630" y2="70" stroke="#22D3EE" />
+      <line x1="580" y1="130" x2="540" y2="220" stroke="#8B5CF6" />
+      <line x1="580" y1="130" x2="630" y2="70" stroke="#8B5CF6" />
+      <line x1="580" y1="130" x2="710" y2="110" stroke="#22D3EE" />
+      <line x1="580" y1="130" x2="720" y2="190" stroke="#8B5CF6" />
+      <line x1="540" y1="220" x2="660" y2="250" stroke="#22D3EE" />
+      <line x1="540" y1="220" x2="720" y2="190" stroke="#22D3EE" />
+      <line x1="630" y1="70" x2="710" y2="110" stroke="#8B5CF6" />
+      <line x1="630" y1="70" x2="780" y2="60" stroke="#22D3EE" />
+      <line x1="660" y1="250" x2="720" y2="190" stroke="#22D3EE" />
+      <line x1="660" y1="250" x2="790" y2="230" stroke="#8B5CF6" />
+      <line x1="710" y1="110" x2="780" y2="60" stroke="#22D3EE" />
+      <line x1="710" y1="110" x2="770" y2="140" stroke="#22D3EE" />
+      <line x1="710" y1="110" x2="720" y2="190" stroke="#8B5CF6" />
+      <line x1="720" y1="190" x2="770" y2="140" stroke="#8B5CF6" />
+      <line x1="720" y1="190" x2="790" y2="230" stroke="#22D3EE" />
+      <line x1="780" y1="60" x2="770" y2="140" stroke="#8B5CF6" />
+      <line x1="780" y1="60" x2="830" y2="90" stroke="#22D3EE" />
+      <line x1="780" y1="60" x2="890" y2="65" stroke="#22D3EE" />
+      <line x1="770" y1="140" x2="830" y2="90" stroke="#22D3EE" />
+      <line x1="770" y1="140" x2="840" y2="175" stroke="#22D3EE" />
+      <line x1="770" y1="140" x2="790" y2="230" stroke="#8B5CF6" />
+      <line x1="790" y1="230" x2="840" y2="175" stroke="#22D3EE" />
+      <line x1="790" y1="230" x2="860" y2="265" stroke="#8B5CF6" />
+      <line x1="830" y1="90" x2="890" y2="65" stroke="#8B5CF6" />
+      <line x1="830" y1="90" x2="900" y2="135" stroke="#22D3EE" />
+      <line x1="830" y1="90" x2="840" y2="175" stroke="#8B5CF6" />
+      <line x1="840" y1="175" x2="900" y2="135" stroke="#22D3EE" />
+      <line x1="840" y1="175" x2="910" y2="215" stroke="#22D3EE" />
+      <line x1="840" y1="175" x2="860" y2="265" stroke="#8B5CF6" />
+      <line x1="860" y1="265" x2="910" y2="215" stroke="#8B5CF6" />
+      <line x1="860" y1="265" x2="975" y2="250" stroke="#22D3EE" />
+      <line x1="890" y1="65" x2="960" y2="50" stroke="#22D3EE" />
+      <line x1="890" y1="65" x2="900" y2="135" stroke="#8B5CF6" />
+      <line x1="900" y1="135" x2="970" y2="110" stroke="#22D3EE" />
+      <line x1="900" y1="135" x2="950" y2="180" stroke="#8B5CF6" />
+      <line x1="900" y1="135" x2="910" y2="215" stroke="#22D3EE" />
+      <line x1="910" y1="215" x2="950" y2="180" stroke="#22D3EE" />
+      <line x1="910" y1="215" x2="975" y2="250" stroke="#8B5CF6" />
+      <line x1="960" y1="50" x2="1030" y2="75" stroke="#8B5CF6" />
+      <line x1="960" y1="50" x2="970" y2="110" stroke="#22D3EE" />
+      <line x1="960" y1="50" x2="1090" y2="60" stroke="#8B5CF6" />
+      <line x1="970" y1="110" x2="1030" y2="75" stroke="#22D3EE" />
+      <line x1="970" y1="110" x2="1025" y2="150" stroke="#8B5CF6" />
+      <line x1="970" y1="110" x2="950" y2="180" stroke="#22D3EE" />
+      <line x1="950" y1="180" x2="1025" y2="150" stroke="#8B5CF6" />
+      <line x1="950" y1="180" x2="1040" y2="225" stroke="#22D3EE" />
+      <line x1="950" y1="180" x2="975" y2="250" stroke="#8B5CF6" />
+      <line x1="975" y1="250" x2="1040" y2="225" stroke="#22D3EE" />
+      <line x1="975" y1="250" x2="1140" y2="245" stroke="#22D3EE" />
+      <line x1="1030" y1="75" x2="1090" y2="60" stroke="#22D3EE" />
+      <line x1="1030" y1="75" x2="1100" y2="120" stroke="#22D3EE" />
+      <line x1="1030" y1="75" x2="1025" y2="150" stroke="#8B5CF6" />
+      <line x1="1025" y1="150" x2="1100" y2="120" stroke="#8B5CF6" />
+      <line x1="1025" y1="150" x2="1085" y2="190" stroke="#8B5CF6" />
+      <line x1="1025" y1="150" x2="1040" y2="225" stroke="#22D3EE" />
+      <line x1="1040" y1="225" x2="1085" y2="190" stroke="#22D3EE" />
+      <line x1="1040" y1="225" x2="1140" y2="245" stroke="#8B5CF6" />
+      <line x1="1090" y1="60" x2="1100" y2="120" stroke="#8B5CF6" />
+      <line x1="1090" y1="60" x2="1135" y2="165" stroke="#22D3EE" />
+      <line x1="1100" y1="120" x2="1135" y2="165" stroke="#22D3EE" />
+      <line x1="1100" y1="120" x2="1085" y2="190" stroke="#8B5CF6" />
+      <line x1="1085" y1="190" x2="1135" y2="165" stroke="#8B5CF6" />
+      <line x1="1085" y1="190" x2="1140" y2="245" stroke="#22D3EE" />
+      <line x1="1135" y1="165" x2="1140" y2="245" stroke="#22D3EE" />
+    </g>
+
+    <!-- 4 Glowing Travelling Dots along lines via SMIL animateMotion -->
+    <!-- Dot 1: Cyan, upper-middle route (3.8s) -->
+    <g filter="url(#packet-glow)">
+      <animateMotion path="M 520 80 L 630 70 L 780 60 L 830 90 L 900 135 L 970 110 L 1030 75 L 1100 120 L 1135 165" dur="3.8s" repeatCount="indefinite" />
+      <circle cx="0" cy="0" r="6" fill="#22D3EE" opacity="0.3" />
+      <circle cx="0" cy="0" r="3.5" fill="#22D3EE" />
+      <circle cx="0" cy="0" r="1.5" fill="#FFFFFF" />
+    </g>
+
+    <!-- Dot 2: Violet, lower route (4.5s) -->
+    <g filter="url(#packet-glow)">
+      <animateMotion path="M 540 220 L 720 190 L 790 230 L 840 175 L 910 215 L 950 180 L 1025 150 L 1085 190 L 1140 245" dur="4.5s" repeatCount="indefinite" />
+      <circle cx="0" cy="0" r="6" fill="#8B5CF6" opacity="0.3" />
+      <circle cx="0" cy="0" r="3.5" fill="#8B5CF6" />
+      <circle cx="0" cy="0" r="1.5" fill="#FFFFFF" />
+    </g>
+
+    <!-- Dot 3: Cyan, crest route (3.4s) -->
+    <g filter="url(#packet-glow)">
+      <animateMotion path="M 580 130 L 710 110 L 770 140 L 830 90 L 890 65 L 960 50 L 1030 75 L 1090 60 L 1135 165" dur="3.4s" repeatCount="indefinite" />
+      <circle cx="0" cy="0" r="5.5" fill="#22D3EE" opacity="0.3" />
+      <circle cx="0" cy="0" r="3" fill="#22D3EE" />
+      <circle cx="0" cy="0" r="1.2" fill="#FFFFFF" />
+    </g>
+
+    <!-- Dot 4: Accent violet/cyan hybrid, zigzag route (4.8s) -->
+    <g filter="url(#packet-glow)">
+      <animateMotion path="M 660 250 L 720 190 L 770 140 L 840 175 L 900 135 L 950 180 L 1040 225 L 1085 190 L 1135 165" dur="4.8s" repeatCount="indefinite" />
+      <circle cx="0" cy="0" r="6" fill="#A78BFA" opacity="0.3" />
+      <circle cx="0" cy="0" r="3.5" fill="#A78BFA" />
+      <circle cx="0" cy="0" r="1.5" fill="#FFFFFF" />
+    </g>
+
+    <!-- 28 Pulsing Network Nodes (r 2-5, cyan & violet) -->
+    <!-- Node 0 -->
+    <circle cx="520" cy="80" r="3" fill="#22D3EE" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.8s" begin="0.1s" repeatCount="indefinite" />
+      <animate attributeName="r" values="3;4.3;3" dur="2.8s" begin="0.1s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 1 -->
+    <circle cx="580" cy="130" r="2.5" fill="#8B5CF6" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.2s" begin="0.8s" repeatCount="indefinite" />
+      <animate attributeName="r" values="2.5;3.8;2.5" dur="3.2s" begin="0.8s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 2 -->
+    <circle cx="540" cy="220" r="3.5" fill="#22D3EE" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.6s" begin="1.4s" repeatCount="indefinite" />
+      <animate attributeName="r" values="3.5;4.9;3.5" dur="2.6s" begin="1.4s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 3 -->
+    <circle cx="630" cy="70" r="3" fill="#8B5CF6" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.0s" begin="0.4s" repeatCount="indefinite" />
+      <animate attributeName="r" values="3;4.2;3" dur="3.0s" begin="0.4s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 4 -->
+    <circle cx="660" cy="250" r="2.5" fill="#22D3EE" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.4s" begin="1.9s" repeatCount="indefinite" />
+      <animate attributeName="r" values="2.5;3.7;2.5" dur="3.4s" begin="1.9s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 5 -->
+    <circle cx="710" cy="110" r="4" fill="#22D3EE" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.7s" begin="0.2s" repeatCount="indefinite" />
+      <animate attributeName="r" values="4;5.5;4" dur="2.7s" begin="0.2s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 6 -->
+    <circle cx="720" cy="190" r="3.5" fill="#8B5CF6" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.1s" begin="1.1s" repeatCount="indefinite" />
+      <animate attributeName="r" values="3.5;4.8;3.5" dur="3.1s" begin="1.1s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 7 -->
+    <circle cx="780" cy="60" r="3" fill="#8B5CF6" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.9s" begin="0.6s" repeatCount="indefinite" />
+      <animate attributeName="r" values="3;4.3;3" dur="2.9s" begin="0.6s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 8 -->
+    <circle cx="770" cy="140" r="4.5" fill="#22D3EE" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.3s" begin="1.6s" repeatCount="indefinite" />
+      <animate attributeName="r" values="4.5;6.0;4.5" dur="3.3s" begin="1.6s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 9 -->
+    <circle cx="790" cy="230" r="3" fill="#22D3EE" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.5s" begin="0.3s" repeatCount="indefinite" />
+      <animate attributeName="r" values="3;4.4;3" dur="2.5s" begin="0.3s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 10 -->
+    <circle cx="830" cy="90" r="3.5" fill="#8B5CF6" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.5s" begin="1.3s" repeatCount="indefinite" />
+      <animate attributeName="r" values="3.5;4.9;3.5" dur="3.5s" begin="1.3s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 11 -->
+    <circle cx="840" cy="175" r="5" fill="#22D3EE" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.8s" begin="0.7s" repeatCount="indefinite" />
+      <animate attributeName="r" values="5;6.8;5" dur="2.8s" begin="0.7s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 12 -->
+    <circle cx="860" cy="265" r="3" fill="#8B5CF6" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.0s" begin="2.1s" repeatCount="indefinite" />
+      <animate attributeName="r" values="3;4.3;3" dur="3.0s" begin="2.1s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 13 -->
+    <circle cx="890" cy="65" r="4" fill="#22D3EE" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.2s" begin="0.5s" repeatCount="indefinite" />
+      <animate attributeName="r" values="4;5.5;4" dur="3.2s" begin="0.5s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 14 -->
+    <circle cx="900" cy="135" r="3.5" fill="#8B5CF6" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.7s" begin="1.7s" repeatCount="indefinite" />
+      <animate attributeName="r" values="3.5;4.8;3.5" dur="2.7s" begin="1.7s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 15 -->
+    <circle cx="910" cy="215" r="4" fill="#22D3EE" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.4s" begin="0.9s" repeatCount="indefinite" />
+      <animate attributeName="r" values="4;5.4;4" dur="3.4s" begin="0.9s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 16 -->
+    <circle cx="960" cy="50" r="3" fill="#8B5CF6" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.6s" begin="0.2s" repeatCount="indefinite" />
+      <animate attributeName="r" values="3;4.3;3" dur="2.6s" begin="0.2s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 17 -->
+    <circle cx="970" cy="110" r="4.5" fill="#22D3EE" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.1s" begin="1.5s" repeatCount="indefinite" />
+      <animate attributeName="r" values="4.5;6.1;4.5" dur="3.1s" begin="1.5s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 18 -->
+    <circle cx="950" cy="180" r="3.5" fill="#8B5CF6" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.9s" begin="0.8s" repeatCount="indefinite" />
+      <animate attributeName="r" values="3.5;4.8;3.5" dur="2.9s" begin="0.8s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 19 -->
+    <circle cx="975" cy="250" r="2.5" fill="#22D3EE" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.3s" begin="2.2s" repeatCount="indefinite" />
+      <animate attributeName="r" values="2.5;3.7;2.5" dur="3.3s" begin="2.2s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 20 -->
+    <circle cx="1030" cy="75" r="4" fill="#22D3EE" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.8s" begin="0.4s" repeatCount="indefinite" />
+      <animate attributeName="r" values="4;5.4;4" dur="2.8s" begin="0.4s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 21 -->
+    <circle cx="1025" cy="150" r="5" fill="#8B5CF6" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.5s" begin="1.2s" repeatCount="indefinite" />
+      <animate attributeName="r" values="5;6.8;5" dur="3.5s" begin="1.2s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 22 -->
+    <circle cx="1040" cy="225" r="3.5" fill="#22D3EE" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.7s" begin="1.8s" repeatCount="indefinite" />
+      <animate attributeName="r" values="3.5;4.9;3.5" dur="2.7s" begin="1.8s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 23 -->
+    <circle cx="1090" cy="60" r="3" fill="#8B5CF6" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.2s" begin="0.6s" repeatCount="indefinite" />
+      <animate attributeName="r" values="3;4.3;3" dur="3.2s" begin="0.6s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 24 -->
+    <circle cx="1100" cy="120" r="4" fill="#22D3EE" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.9s" begin="1.4s" repeatCount="indefinite" />
+      <animate attributeName="r" values="4;5.5;4" dur="2.9s" begin="1.4s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 25 -->
+    <circle cx="1085" cy="190" r="3" fill="#8B5CF6" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.0s" begin="0.3s" repeatCount="indefinite" />
+      <animate attributeName="r" values="3;4.3;3" dur="3.0s" begin="0.3s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 26 -->
+    <circle cx="1135" cy="165" r="4.5" fill="#22D3EE" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.3s" begin="1.0s" repeatCount="indefinite" />
+      <animate attributeName="r" values="4.5;6.1;4.5" dur="3.3s" begin="1.0s" repeatCount="indefinite" />
+    </circle>
+    <!-- Node 27 -->
+    <circle cx="1140" cy="245" r="3" fill="#8B5CF6" opacity="0.4">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.6s" begin="2.0s" repeatCount="indefinite" />
+      <animate attributeName="r" values="3;4.4;3" dur="2.6s" begin="2.0s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Left-side text block (Fades in over 1.2s) -->
+    <g class="text-fade-group" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="1.2s" fill="freeze" />
+
+      <!-- Title / Name at x=60, y=140 -->
+      <text x="60" y="140" class="name-text">Naimul Islam</text>
+
+      <!-- Subtitle at x=60, y=180 -->
+      <text x="60" y="180" class="sub-text">Senior Software Engineer</text>
+      <text x="60" y="206" class="sub-text">.NET · Distributed Systems · Cloud · NLP</text>
+
+      <!-- Cyan-to-violet gradient underline below subtitle -->
+      <line x1="60" y1="226" x2="440" y2="226" stroke="url(#cyan-violet-grad)" stroke-width="2.5" stroke-linecap="round" />
+    </g>
+
+    <!-- Outer card border with subtle glow gradient -->
+    <rect width="1200" height="300" rx="16" fill="none" stroke="url(#border-grad)" stroke-width="1.5" />
+  </g>
+</svg>

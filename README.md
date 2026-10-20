@@ -108,7 +108,7 @@
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=pulok529&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0B1020&title_color=22D3EE&icon_color=8B5CF6&include_all_commits=true&count_private=true" height="165" alt="GitHub stats">
+  <img src="https://github-readme-stats.vercel.app/api?username=pulok529&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0B1020&title_color=22D3EE&icon_color=8B5CF6&count_private=true" height="165" alt="GitHub stats">
   <img src="https://streak-stats.demolab.com?user=pulok529&theme=tokyonight&hide_border=true&background=0B1020&ring=22D3EE&fire=8B5CF6&currStreakLabel=22D3EE" height="165" alt="GitHub streak">
 </p>
 

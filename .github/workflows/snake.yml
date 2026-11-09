@@ -21,7 +21,7 @@ jobs:
         with:
           path: src
       - name: Build stats and language cards
-        run: python3 src/scripts/activity.py dist/activity.svg
+        run: sudo chown -R "$(id -u)" dist && python3 src/scripts/activity.py dist/activity.svg
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_USER: ${{ github.repository_owner }}

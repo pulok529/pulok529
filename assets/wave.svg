@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="40" viewBox="0 0 880 40" role="img" aria-hidden="true">
+<style>
+@keyframes draw{0%{stroke-dashoffset:900}60%,100%{stroke-dashoffset:0}}
+.draw{stroke-dasharray:900;animation:draw 5s ease-out infinite alternate}
+@media (prefers-reduced-motion:reduce){.draw{animation:none}}
+</style>
+<path class="draw" d="M0 20 Q 55 0 110 20 T 220 20 T 330 20 T 440 20 T 550 20 T 660 20 T 770 20 T 880 20" fill="none" stroke="#2EF2FF" stroke-opacity=".5" stroke-width="1.5"/>
+</svg>

@@ -14,7 +14,7 @@ Q = """query($login:String!,$cursor:String){user(login:$login){
  pullRequests{totalCount} issues{totalCount}
  repositories(first:100,after:$cursor,ownerAffiliations:OWNER,isFork:false){
   pageInfo{hasNextPage endCursor}
-  nodes{stargazerCount languages(first:10,orderBy:{field:SIZE,direction:DESC}){edges{size node{name}}}}}}}"""
+  nodes{stargazerCount defaultBranchRef{target{... on Commit{history{totalCount}}}} languages(first:10,orderBy:{field:SIZE,direction:DESC}){edges{size node{name}}}}}}}"""
 
 def gql(cursor=None):
     req = urllib.request.Request("https://api.github.com/graphql",
@@ -45,8 +45,21 @@ def collect():
     for r in repos:
         for e in r["languages"]["edges"]:
             langs[e["node"]["name"]] = langs.get(e["node"]["name"], 0) + e["size"]
+    commits = cc["totalCommitContributions"] + cc["restrictedContributionsCount"]
+    commit_label = "Commits this year"
+    if commits == 0:
+        repo_commits = sum(
+            r["defaultBranchRef"]["target"]["history"]["totalCount"]
+            for r in repos
+            if r.get("defaultBranchRef") and r["defaultBranchRef"].get("target")
+        )
+        if repo_commits > 0:
+            commits = repo_commits
+            commit_label = "Commits"
+
     return {
-        "commits": cc["totalCommitContributions"] + cc["restrictedContributionsCount"],
+        "commits": commits,
+        "commit_label": commit_label,
         "prs": u["pullRequests"]["totalCount"], "issues": u["issues"]["totalCount"],
         "stars": sum(r["stargazerCount"] for r in repos), "streak": streak,
         "langs": sorted(langs.items(), key=lambda kv: -kv[1])[:5],
@@ -57,7 +70,7 @@ COLORS = ["#2EF2FF", "#A66BFF", "#2EF29A", "#FFB547", "#7E97A6"]
 def render(s):
     W, H, gap = 880, 200, 16
     cw = (W - gap) // 2
-    rows = [("Commits this year", s["commits"]), ("Pull requests", s["prs"]), ("Issues", s["issues"]),
+    rows = [(s.get("commit_label", "Commits"), s["commits"]), ("Pull requests", s["prs"]), ("Issues", s["issues"]),
             ("Stars earned", s["stars"]), ("Current streak", f'{s["streak"]} days')]
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="GitHub stats and most used languages">',
            '<style>.t{font:600 18px "Chakra Petch","Segoe UI",sans-serif;fill:#2EF2FF}.l{font:400 14px "IBM Plex Sans","Segoe UI",sans-serif;fill:#C3D6E0}'

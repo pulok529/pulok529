@@ -1,4 +1,4 @@
-name: snake
+name: activity
 on:
   schedule:
     - cron: "0 0 * * *"
@@ -11,18 +11,9 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: Platane/snk@v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          github_token: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
-          outputs: |
-            dist/snake.svg?color_snake=#A66BFF&color_dots=#ebedf0,#b8f3f7,#6fe6ef,#2ccfdc,#16808a
-            dist/snake-dark.svg?color_snake=#A66BFF&color_dots=#0C1217,#0f4a52,#16808a,#22bfcc,#2EF2FF&color_background=#05080B
       - uses: actions/checkout@v4
-        with:
-          path: src
-      - name: Build stats and language cards
-        run: sudo chown -R "$(id -u)" dist && python3 src/scripts/activity.py dist/activity.svg
+      - name: Build stats, languages, and snake card
+        run: python3 scripts/activity.py dist/activity.svg
         env:
           GITHUB_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
           GH_USER: ${{ github.repository_owner }}

@@ -30,18 +30,59 @@ I've been building software for over 7 years, mostly microfinance, core banking,
 
 ## Products I've built
 
-| Product | What it does | Frontend |
-| :--- | :--- | :--- |
-| [**Wikdom**](https://github.com/pulok529/wikdom) | Academy management: admissions, timetable with clash detection, exams, report cards, fees | `Angular 20` |
-| [**MedGet**](https://github.com/pulok529/medget) | Pharma supply chain: batches and expiry, distributor orders, recalls, 50k-row stock grid | `Next.js 16` |
-| [**ManGO**](https://github.com/pulok529/mango-hrm) | HRM: people, org chart, attendance, leave, payroll run wizard | `Nuxt 4` |
-| [**Hisab**](https://github.com/pulok529/hisab) | Double-entry accounting: journals, ledger, bank reconciliation, statements | `React Router v7` |
-| [**CrediGen**](https://github.com/pulok529/credigen) | Microfinance, with an offline Bangla collection-sheet PWA | `Vite + React 19` |
+<p align="center">
+  <a href="https://github.com/pulok529/AcademiSolutionRCS"><img src="assets/cards/wikdom.svg" width="49%" alt="Wikdom - Academy Management" /></a>
+  <a href="https://github.com/pulok529/mediflow_hospital_management"><img src="assets/cards/medget.svg" width="49%" alt="MedGet - Pharma Supply Chain" /></a>
+</p>
+<p align="center">
+  <a href="https://github.com/pulok529/SMC_HRIS"><img src="assets/cards/mango-hrm.svg" width="49%" alt="ManGO - Enterprise HRM" /></a>
+  <a href="https://github.com/pulok529/Commercial_Management"><img src="assets/cards/hisab.svg" width="49%" alt="Hisab - Double-Entry Accounting" /></a>
+</p>
+<p align="center">
+  <a href="https://github.com/pulok529/loan_default_prediction"><img src="assets/cards/credigen.svg" width="49%" alt="CrediGen - Microfinance & Credit Risk" /></a>
+  <a href="https://github.com/pulok529/matcoproject"><img src="assets/cards/applyly.svg" width="49%" alt="Applyly - Candidate Recruitment & ATS" /></a>
+</p>
+
+## Featured Repositories & Engineering Systems
+
+<p align="center">
+  <a href="https://github.com/pulok529/SMSSendingAPP"><img src="assets/cards/pulse-sender.svg" width="49%" alt="Pulse Sender" /></a>
+  <a href="https://github.com/pulok529/brieflow"><img src="assets/cards/brieflow.svg" width="49%" alt="Brieflow" /></a>
+</p>
+<p align="center">
+  <a href="https://github.com/pulok529/project_arcmorph"><img src="assets/cards/project_arcmorph.svg" width="49%" alt="ArcMorph" /></a>
+  <a href="https://github.com/pulok529/SenkuAssist"><img src="assets/cards/senku.svg" width="49%" alt="Senku" /></a>
+</p>
+<p align="center">
+  <a href="https://github.com/pulok529/nexus-portfolio"><img src="assets/cards/nexus-portfolio.svg" width="49%" alt="Nexus Portfolio" /></a>
+  <a href="https://github.com/pulok529/orderprocessapi"><img src="assets/cards/database-mastery.svg" width="49%" alt="Database Mastery" /></a>
+</p>
+
+<details>
+<summary><b>View More System Architectures & Concept Engines (8)</b></summary>
+<br/>
+<p align="center">
+  <a href="https://github.com/pulok529/Makan_Society_ReactPython"><img src="assets/cards/claimtrack.svg" width="49%" alt="ClaimTrack" /></a>
+  <a href="https://github.com/pulok529/multimodal_kyc_risk"><img src="assets/cards/gridmind.svg" width="49%" alt="GridMind" /></a>
+</p>
+<p align="center">
+  <a href="https://github.com/pulok529/LocalCloundAIAgent"><img src="assets/cards/triageai.svg" width="49%" alt="TriageAI" /></a>
+  <a href="https://github.com/pulok529/transaction_fraud_anomaly"><img src="assets/cards/pulseboard.svg" width="49%" alt="Pulseboard" /></a>
+</p>
+<p align="center">
+  <a href="https://github.com/pulok529/Aptech_ERP"><img src="assets/cards/devops-playbook.svg" width="49%" alt="DevOps Playbook" /></a>
+  <a href="https://github.com/pulok529/LocalLLMConsole"><img src="assets/cards/pilotdesk.svg" width="49%" alt="PilotDesk" /></a>
+</p>
+<p align="center">
+  <a href="https://github.com/pulok529/graph_fraud_ring_detection"><img src="assets/cards/slotbook.svg" width="49%" alt="SlotBook" /></a>
+  <a href="https://github.com/pulok529/ProshikaDataMigSSIS"><img src="assets/cards/sunplan.svg" width="49%" alt="SunPlan" /></a>
+</p>
+</details>
 
 ## Activity
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/pulok529/pulok529/output/activity.svg?v=2" width="100%" alt="Activity: GitHub stats, most used languages, and contribution snake" />
+  <img src="https://raw.githubusercontent.com/pulok529/pulok529/output/activity.svg?v=3" width="100%" alt="Activity: GitHub stats, most used languages, and contribution snake" />
 </p>
 
 ## Get in touch
@@ -50,8 +91,6 @@ Open to remote full stack and frontend roles with full US-hours overlap. Email i
 
 <p align="center">
   <a href="mailto:naimul.islam.pulak@gmail.com"><img src="https://img.shields.io/badge/Email-naimul.islam.pulak%40gmail.com-0C1217?style=for-the-badge&logo=gmail&logoColor=2EF2FF&labelColor=0C1217" alt="Email" /></a>
-  &nbsp;
-  <a href="#pinned"><img src="https://img.shields.io/badge/CV-PDF-0C1217?style=for-the-badge&logo=adobeacrobatreader&logoColor=C3D6E0&labelColor=0C1217" alt="CV (PDF)" /></a>
   &nbsp;
   <a href="https://github.com/pulok529/nexus-portfolio"><img src="https://img.shields.io/badge/Portfolio-3D%20Nexus-0C1217?style=for-the-badge&logo=three.js&logoColor=2EF2FF&labelColor=0C1217" alt="3D portfolio" /></a>
 </p>

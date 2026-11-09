@@ -85,13 +85,7 @@ Each one does the kind of work a real client needs, built on my shared design sy
 
 ## Activity
 
-<p align="center">
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=pulok529&show_icons=true&count_private=true&bg_color=0C1217&title_color=2EF2FF&text_color=C3D6E0&icon_color=A66BFF&hide_border=true" alt="GitHub stats" />
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=pulok529&layout=compact&bg_color=0C1217&title_color=2EF2FF&text_color=C3D6E0&icon_color=A66BFF&hide_border=true" alt="Most used languages" />
-</p>
-<p align="center">
-<img src="https://streak-stats.demolab.com?user=pulok529&background=0C1217&ring=2EF2FF&fire=A66BFF&currStreakLabel=2EF2FF&sideLabels=C3D6E0&currStreakNum=E6F6FF&sideNums=E6F6FF&dates=7E97A6&stroke=0C1217&hide_border=true" alt="Contribution streak" />
-</p>
+<p align="center"><img src="https://raw.githubusercontent.com/pulok529/pulok529/output/activity.svg" width="100%" alt="GitHub stats and most used languages" /></p>
 
 <p align="center">
 <picture>

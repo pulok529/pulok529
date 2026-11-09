@@ -41,7 +41,7 @@ I've been building software for over 7 years, mostly microfinance, core banking,
 ## Activity
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/pulok529/pulok529/output/activity.svg" width="100%" alt="Activity: GitHub stats, most used languages, and contribution snake" />
+  <img src="https://raw.githubusercontent.com/pulok529/pulok529/output/activity.svg?v=2" width="100%" alt="Activity: GitHub stats, most used languages, and contribution snake" />
 </p>
 
 ## Get in touch
